@@ -8,8 +8,10 @@
 </head>
 
 <body>
-
+    <div id="div1"></div>
     <script>
+        const divMessage = document.getElementById('div1');
+
         //陣列宣告 [value, value, value]
         const balls = ["basketball", "valleyball", "baseball", "football"];
 
@@ -30,7 +32,12 @@
         ];
 
         //請讀出Tom, 28的資料
+        //members[1] => { "name": "Tom", "age": 28 }
+        //members[1].name => Tom
+        const { name, age } = members[1]; //透過物件解構讀出物件中的資料
 
+        //  divMessage.textContent = `Hello ${members[1].name}, You are  ${members[1].age} years old.`;
+        divMessage.textContent = `Hello ${name}, You are  ${age} years old.`;
 
     </script>
 </body>
