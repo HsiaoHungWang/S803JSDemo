@@ -35,20 +35,29 @@
         //members[1] => { "name": "Tom", "age": 28 }
         //members[1].name => Tom
         // const { name, age } = members[1]; //透過物件解構讀出物件中的資料
-        const { name: abc, age: xyz } = members[1]; //透過物件解構讀出物件中的資料
+        // const { name: abc, age: xyz } = members[1]; //透過物件解構讀出物件中的資料
 
-        //  divMessage.textContent = `Hello ${members[1].name}, You are  ${members[1].age} years old.`;
-        // divMessage.textContent = `Hello ${name}, You are  ${age} years old.`;
-        divMessage.textContent = `Hello ${abc}, You are  ${xyz} years old.`;
+        // //  divMessage.textContent = `Hello ${members[1].name}, You are  ${members[1].age} years old.`;
+        // // divMessage.textContent = `Hello ${name}, You are  ${age} years old.`;
+        // divMessage.textContent = `Hello ${abc}, You are  ${xyz} years old.`;
 
-        let a = 10;
-        let b = 20;
-        // let temp = a; //將a的值放進temp變數
-        // a = b; //將b的值放進a變數
-        // b = temp; //再將temp的值放進的b變數
-        [b, a] = [a, b];
+        // let a = 10;
+        // let b = 20;
+        // // let temp = a; //將a的值放進temp變數
+        // // a = b; //將b的值放進a變數
+        // // b = temp; //再將temp的值放進的b變數
+        // [b, a] = [a, b];
 
-        console.log(`a = ${a}, b = ${b}`); //a = 20, b = 10
+        // console.log(`a = ${a}, b = ${b}`); //a = 20, b = 10
+
+        const num1 = Number(window.prompt('請輸入數字1', 0));
+        const num2 = Number(window.prompt('請輸入數字2', 0));
+        //輸入的數字都是字串型態
+        //要相加時，需轉型成number型態
+        // console.log(typeof Number(num1));
+        // console.log(typeof +num2);
+        // console.log(`num1 + num2 = ${num1 + num2}`)
+        console.log(`num1 + num2 = ${+num1 + +num2}`)
 
 
 
