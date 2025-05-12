@@ -9,6 +9,7 @@
 
 <body>
     <h2 id="theH">Hello JavaScript!!</h2>
+    <input type="text" id="inputName" />
     <div id="div1"></div>
 
 
@@ -17,11 +18,35 @@
     <script>
         'use strict'
 
+        //輸入方法一
+        // const data = window.prompt('請輸入姓名', 'Guest');
+
+        //輸入方法二
+        //步驟一找到要控制的對象
+        const inpName = document.getElementById('inputName');
+        //輸出
         const theDiv = document.getElementById('div1');  //根據id找到要控制的元素
+
+        //步驟二在甚麼時候 => 使用者的操作行為 => 事件
+        inpName.addEventListener('input', () => {
+            //console.log(inpName.value); //透過value屬性讀取使用者輸入的值
+            //步驟三做啥事 把輸入的值顯示在div中
+            theDiv.textContent = inpName.value;
+        })
+
+
+
+
+
+
         //輸出一段內容到此標籤中
         //theDiv.textContent = '<h2>第一支JavaScript程式</h2>';
         //輸出的內容是有HTML標籤的，請使用innerHTML屬性
-        theDiv.innerHTML = '<h2>第一支JavaScript程式</h2>';
+        //theDiv.innerHTML = '<h2>第一支JavaScript程式</h2>';
+        //C# $"Hello {data}"
+        // theDiv.textContent = 'Hello, ' + data;
+        //JS `Hello, ${data}`
+        // theDiv.textContent = `Hello, ${data}`;
 
 
 
