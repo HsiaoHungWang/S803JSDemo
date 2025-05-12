@@ -34,10 +34,23 @@
         //請讀出Tom, 28的資料
         //members[1] => { "name": "Tom", "age": 28 }
         //members[1].name => Tom
-        const { name, age } = members[1]; //透過物件解構讀出物件中的資料
+        // const { name, age } = members[1]; //透過物件解構讀出物件中的資料
+        const { name: abc, age: xyz } = members[1]; //透過物件解構讀出物件中的資料
 
         //  divMessage.textContent = `Hello ${members[1].name}, You are  ${members[1].age} years old.`;
-        divMessage.textContent = `Hello ${name}, You are  ${age} years old.`;
+        // divMessage.textContent = `Hello ${name}, You are  ${age} years old.`;
+        divMessage.textContent = `Hello ${abc}, You are  ${xyz} years old.`;
+
+        let a = 10;
+        let b = 20;
+        // let temp = a; //將a的值放進temp變數
+        // a = b; //將b的值放進a變數
+        // b = temp; //再將temp的值放進的b變數
+        [b, a] = [a, b];
+
+        console.log(`a = ${a}, b = ${b}`); //a = 20, b = 10
+
+
 
     </script>
 </body>
