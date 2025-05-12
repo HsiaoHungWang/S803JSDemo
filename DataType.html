@@ -50,14 +50,29 @@
 
         // console.log(`a = ${a}, b = ${b}`); //a = 20, b = 10
 
-        const num1 = Number(window.prompt('請輸入數字1', 0));
-        const num2 = Number(window.prompt('請輸入數字2', 0));
-        //輸入的數字都是字串型態
-        //要相加時，需轉型成number型態
-        // console.log(typeof Number(num1));
-        // console.log(typeof +num2);
-        // console.log(`num1 + num2 = ${num1 + num2}`)
-        console.log(`num1 + num2 = ${+num1 + +num2}`)
+        // const num1 = Number(window.prompt('請輸入數字1', 0));
+        // const num2 = Number(window.prompt('請輸入數字2', 0));
+        // //輸入的數字都是字串型態
+        // //要相加時，需轉型成number型態
+        // // console.log(typeof Number(num1));
+        // // console.log(typeof +num2);
+        // // console.log(`num1 + num2 = ${num1 + num2}`)
+        // console.log(`num1 + num2 = ${+num1 + +num2}`)
+
+        //不可變 string、number、boolean
+        // let str = 'Hello';
+        // console.log(str.length); //5
+        // console.log(str[0]); //H
+        // str[0] = 'A';
+        // console.log(str); //Aello 真正印出的結果還是 Hello
+
+        //可變 array、object
+        const user = { "name": "Tom" };
+        const newUser = user;
+        //user、newUser 都是相同的位址 > 位址指向同一個物件資料
+        newUser.name = "Jack";
+        console.log(user);
+        console.log(newUser);
 
 
 
