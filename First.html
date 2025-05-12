@@ -8,10 +8,34 @@
 </head>
 
 <body>
+    <h2 id="theH">Hello JavaScript!!</h2>
+    <div id="div1"></div>
+
+
 
     <script src="scripts/hello.js"></script>
     <script>
-        window.alert('Hello JavaScript!!')
+        'use strict'
+
+        const theDiv = document.getElementById('div1');  //根據id找到要控制的元素
+        //輸出一段內容到此標籤中
+        //theDiv.textContent = '<h2>第一支JavaScript程式</h2>';
+        //輸出的內容是有HTML標籤的，請使用innerHTML屬性
+        theDiv.innerHTML = '<h2>第一支JavaScript程式</h2>';
+
+
+
+        // x = 'abc';
+        // console.log(x);
+        // get Element By Id
+
+        // let package = 'xyz';
+        // console.log(package);
+
+        // window.alert('Hello JavaScript!!')
+        // const myH1 = document.getElementById('theH');
+        // console.log(myH1);
+
     </script>
 </body>
 
