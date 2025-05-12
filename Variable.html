@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict'
+
+        // const name = "guest";
+        // name = "Tom";  //不能重新給值 Uncaught TypeError: Assignment to constant variable.
+        // console.log(name);
+
+        // let age = 30;
+        // age = 25;
+        // console.log(age);
+        //{key:value}
+
+        // const member = { "name": "Tom", "age": 30 };
+        // member.name = "Mary";
+        // console.log(member);
+
+        // let cost = 100;
+        // let cost = 1000;
+
+
+        // //變數沒宣告就拿來用  Uncaught ReferenceError: _name is not defined
+        // //var _name;
+        // console.log(_name);  //undefined，變數有宣告沒有指定值
+        // //變數提升，變數宣告會在程式的最上面宣告，但是指定變數的值，會在原位置
+        // //_name = "Jack";
+        // var _name = "Jack";
+
+        //Uncaught ReferenceError: Cannot access '_name' before initialization
+        //let _name;
+        console.log(_name);
+        //TDZ(Temporal Dead Zone) : 暫時死區，
+        // 用let 宣告的變數一樣有提升(hoisting)
+        // 只是把提升的變數放在暫時無法執行區域
+        let _name = "Mary";
+
+
+
+
+    </script>
+</body>
+
+</html>
