@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+
+        //定義函式
+        //函式宣告式會有提升(hositing)的行為
+        function sayHi1(name) {
+            return `Hello, ${name}`
+        }
+
+        //函式表達式，要先宣告再呼叫
+        const sayHi2 = function (name) {
+            return `Hi, ${name}`
+        }
+
+        //箭頭函式
+        const sayHi3 = (name) => {
+            return `Hi, ${name}`
+        }
+
+        //只有一個參數，()可以拿掉
+        const sayHi4 = name => {
+            return `Hi, ${name}`
+        }
+
+        //程式區塊中只有一行程式碼
+        //{} return 可以拿掉
+        const sayHi5 = name => `Hi, ${name}`;
+
+
+
+
+        //呼叫函式
+        const greeting1 = sayHi1('Tom');
+        console.log(greeting1);
+
+        const greeting2 = sayHi2('Tracy');
+        console.log(greeting2);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
