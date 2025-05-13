@@ -16,8 +16,22 @@
         // console.log(rnd * 100);
         // console.log(Math.floor(rnd * 100));
         // console.log(Math.floor(rnd * 100) + 1);
-        const target = Math.floor(Math.random() * 100) + 1
+        const target = Math.floor(Math.random() * 100) + 1;
         console.log(target);
+        while (true) {
+            guess = parseInt(window.prompt('請輸入1-100之間的數字，輸入0離開遊戲'));
+            if (guess === 0) {
+                window.alert('遊戲結束');
+                break;
+            } else if (guess < target) {
+                window.alert('數字太小');
+            } else if (guess > target) {
+                window.alert('數字太大');
+            } else {
+                window.alert(`中了：${guess}`);
+                break;
+            }
+        }
     </script>
 </body>
 
