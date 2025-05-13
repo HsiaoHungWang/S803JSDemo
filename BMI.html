@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label>體重(公斤)：</label> <input type="text" id="inputWeight" />
+    </div>
+    <div>
+        <label>身高(公分)：</label> <input type="text" id="inputHeight" />
+    </div>
+    <div>
+        <button id="buttonCalc">BMI計算</button>
+    </div>
+    <div id="divMessage"></div>
+
+    <script>
+        //步驟一找到要控制的對象
+        const inpWeight = document.getElementById('inputWeight');
+        const inpHeight = document.getElementById('inputHeight');
+        const btnCalc = document.getElementById('buttonCalc');
+        const divMsg = document.getElementById('divMessage');
+
+
+        //步驟二 使用者按下按鈕
+        btnCalc.addEventListener('click', () => {
+            //步驟三 計算BMI
+            const h = inpHeight.value / 100; //公分轉公尺
+            const w = inpWeight.value;
+            const bmi = w / (h ** 2);
+
+            let message = "";
+            if (bmi < 18.5) {
+                message = "過輕";
+            } else if (bmi >= 18.5 && bmi < 24) {
+                message = "正常";
+            } else if (bmi >= 24 && bmi < 27) {
+                message = "過重";
+            } else if (bmi >= 27 && bmi < 30) {
+                message = "輕度肥胖";
+            } else if (bmi >= 30 && bmi < 35) {
+                message = "中度肥胖";
+            } else {
+                message = "重度肥胖";
+            }
+
+            //步驟四 輸出結果
+            divMsg.textContent = `BMI：${bmi}，${message}`;
+        })
+
+
+    </script>
+</body>
+
+</html>
