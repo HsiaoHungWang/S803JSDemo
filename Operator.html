@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <button>登入</button>
+    <script>
+        // let a = 10;
+        // let b = 10 * a++;
+        // console.log(a); //11
+        // console.log(b); //100
+        // let b = 10 * ++a;
+        // console.log(a); //11
+        // console.log(b); //110
+
+
+        let userName = "Tom";
+        // if (!userName) {
+        //     userName = "Guest";
+        // }
+
+        // || 的短路運算常用在設定初始值
+        userName = userName || "Guest"
+
+        console.log(userName);
+
+
+        //, phone: { "office": "02-11112222", "home": "07-1234567" } 
+        //, phone: { "office": "02-11112222", "home": "07-1234567" } 
+        const user = { name: "Tom", details: { age: 25, city: "Taipei" } };
+        console.log(user.name);
+        console.log(user.details);
+        console.log(user.phone); //undefined
+        // console.log(user.phone.office); //Uncaught TypeError: Cannot read properties of undefined (reading 'office')
+        // if (user.phone) {
+        //     console.log(user.phone.office);
+        // } else {
+        //     console.log('沒輸入電話')
+        // }
+        // && 的短路運算常用在檢查物件的屬性是否存在
+        //false && 不會執行
+        const phone = user.phone && user.phone.home;
+        console.log(phone);
+
+        //三元運算子  if...else...   條件式 ? "true" : "false"
+        const phone1 = user.phone ? user.phone.home : '沒輸入電話';
+        console.log(phone1)
+
+        //isLogginedIn 為true 顯示登出，否則顯示登入
+
+    </script>
+</body>
+
+</html>
