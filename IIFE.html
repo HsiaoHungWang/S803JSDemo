@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<button id="button1">click</button>
+
+<body>
+
+
+    <script>
+        const btn = document.getElementById('button1');
+
+
+        //IIFE
+        ((name) => {
+            let age = 30;
+            console.log(`Hi, ${name}`);
+        })('Mary');
+
+        (() => { })();
+
+
+
+        const sayHi = () => {
+            let name = "Jack";
+            console.log(`Hi, ${name}`);
+        }
+        sayHi();
+
+
+        //callback function
+        //addEventListener 是一個函式，第二個參數也是一個函式
+        //click 行為發生會回頭(回呼)去執行sayHi function => callback function
+        btn.addEventListener('click', sayHi);
+
+        window.setTimeout(() => { }, 1000); //1000毫秒 => 1秒鐘
+
+        //closure function
+        function outer() {
+            let name = "Jack";
+            return function inner() {
+                console.log(name);
+            }
+        }
+        const myClosure = outer(); //myClosure 就是 inner()
+        //console.log(myClosure);
+        myClosure();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
