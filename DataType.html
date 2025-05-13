@@ -66,13 +66,32 @@
         // str[0] = 'A';
         // console.log(str); //Aello 真正印出的結果還是 Hello
 
-        //可變 array、object
-        const user = { "name": "Tom" };
-        const newUser = user;
-        //user、newUser 都是相同的位址 > 位址指向同一個物件資料
+        // //可變 array、object
+        // const user = { "name": "Tom" };
+        // const newUser = user;
+        // //user、newUser 都是相同的位址 > 位址指向同一個物件資料
+        // newUser.name = "Jack";
+        // console.log(user);
+        // console.log(newUser);
+
+
+        const user = { name: "Tom", details: { age: 25, city: "Taipei" } };
+
+        //const newUser = user; //複製的是位址
+
+        //const newUser = { ...user }; //淺拷貝(Shallow Copy)
+
+        //深拷貝(Deep Copy) 
+        //方法一
+        //const newUser = JSON.parse(JSON.stringify(user));
+        //方法二
+        const newUser = structuredClone(user);
+
         newUser.name = "Jack";
+        newUser.details.age = 31;
         console.log(user);
         console.log(newUser);
+
 
 
 
