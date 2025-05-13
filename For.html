@@ -75,7 +75,7 @@
         // }
 
         //Array 物件
-        //array.forEach();
+        //array.forEach(); 讀取陣列中的資料
         // members.forEach((a, b, c) => {
         //     console.log(a); //{ "name": "Jack", "age": 30 }
         //     console.log(b); //0,1,2
@@ -83,11 +83,13 @@
         // })
         let str = "";
         members.forEach((member) => {
-            //console.log(member);
-            //   console.log(member.name);
+            //console.log(member);  // { "name": "Jack", "age": 30, "email": "Jack@company.com" }
+            //console.log(member.name);
             // console.log(member.age);
             // console.log(member.email);
             const { name, age, email } = member;
+
+            //顯示資料
             str += `
                 <tr>
                   <td>${name}</td>
