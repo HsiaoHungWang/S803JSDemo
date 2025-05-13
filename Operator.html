@@ -9,7 +9,7 @@
 
 <body>
     <div></div>
-    <button>登入</button>
+    <button id="buttonToggle">登入</button>
     <script>
         // let a = 10;
         // let b = 10 * a++;
@@ -53,6 +53,19 @@
         console.log(phone1)
 
         //isLogginedIn 為true 顯示登出，否則顯示登入
+        const btnToggle = document.getElementById('buttonToggle');
+        btnToggle.addEventListener('click', () => {
+            // let status = "";
+            let isLogginedIn = false;
+            if (btnToggle.textContent === "登入") {
+                //   status = "登出";
+                isLogginedIn = true;
+            } else {
+                //  status = "登入";
+                isLogginedIn = false;
+            }
+            btnToggle.textContent = isLogginedIn ? "登出" : "登入";
+        })
 
     </script>
 </body>
