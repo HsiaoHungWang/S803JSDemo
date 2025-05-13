@@ -5,10 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid green;
+            width: 500px;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+        </tbody>
+    </table>
     <script>
         const balls = ["basketball", "valleyball", "baseball", "football"];
 
@@ -21,7 +43,7 @@
         //     console.log(ball);
         // }
 
-        //for...in 讀取陣列
+        //for...in 讀取陣列，不建議
         // for (let i in balls) {
         //     console.log(i);
         //     console.log(balls[i]);
@@ -36,12 +58,51 @@
         //     console.log(employee[key]); //Jack、30、email
         // }
 
-
+        //JSON
         const members = [
-            { "name": "Jack", "age": 30 },
-            { "name": "Tom", "age": 28 },
-            { "name": "Mary", "age": 33 }
+            { "name": "Jack", "age": 30, "email": "Jack@company.com" },
+            { "name": "Tom", "age": 28, "email": "Tom@company.com" },
+            { "name": "Mary", "age": 33, "email": "Mary@company.com" }
         ];
+        const tb = document.getElementById('tbody1');
+
+        // for (let member of members) {
+        //     console.log(member.name);
+        //     console.log(member.age);
+        //     for (let key in member) {
+        //         console.log(member[key]);
+        //     }
+        // }
+
+        //Array 物件
+        //array.forEach();
+        // members.forEach((a, b, c) => {
+        //     console.log(a); //{ "name": "Jack", "age": 30 }
+        //     console.log(b); //0,1,2
+        //     console.log(c); //[{},{},{}]
+        // })
+        let str = "";
+        members.forEach((member) => {
+            //console.log(member);
+            //   console.log(member.name);
+            // console.log(member.age);
+            // console.log(member.email);
+            const { name, age, email } = member;
+            str += `
+                <tr>
+                  <td>${name}</td>
+                  <td>${age}</td>
+                  <td>${email}</td>
+                </tr>            
+            `
+            // console.log(name);
+            // console.log(age);
+            // console.log(email);
+
+        })
+        console.log(str);
+        tb.innerHTML = str;
+
 
 
 
