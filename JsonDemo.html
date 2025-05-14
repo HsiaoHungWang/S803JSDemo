@@ -62,11 +62,19 @@
         const inpEmail = document.getElementById('inputEmail');
 
         //JSON
-        const members = [
-            { "name": "Jack", "age": 30, "email": "Jack@company.com" },
-            { "name": "Tom", "age": 28, "email": "Tom@company.com" },
-            { "name": "Mary", "age": 33, "email": "Mary@company.com" }
-        ];
+        // const members = [
+        //     { "name": "Jack", "age": 30, "email": "Jack@company.com" },
+        //     { "name": "Tom", "age": 28, "email": "Tom@company.com" },
+        //     { "name": "Mary", "age": 33, "email": "Mary@company.com" }
+        // ];
+
+        const members = JSON.parse(localStorage.getItem('members') || '[]');
+
+        //localStorage
+        // localStorage.setItem("name", "Tom");
+        // console.log(localStorage.getItem("name"));
+
+        // localStorage.setItem('members', JSON.stringify(members));
 
         //刪除陣列的兩種寫法
         // delete members[1];
