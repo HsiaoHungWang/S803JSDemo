@@ -31,6 +31,7 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="tbody1">
@@ -48,6 +49,11 @@
             { "name": "Mary", "age": 33, "email": "Mary@company.com" }
         ];
 
+        //刪除陣列的兩種寫法
+        // delete members[1];
+        // members.splice(??, 1); //第一個1是索引值，第二個1是刪除1筆資料
+        // console.log(members);
+
         const loadDatas = (datas) => {
             // console.log(datas);
             //     const htmlDatas = datas.map((value, index, array) => {
@@ -58,7 +64,8 @@
             const htmlDatas = datas.map(member => {
                 const { name, age, email } = member; // { "name": "Jack", "age": 30, "email": "Jack@company.com" }
                 return `
-                   <tr><td>${name}</td><td>${age}</td><td>${email}</td></tr>
+                   <tr><td>${name}</td><td>${age}</td><td>${email}</td>
+                       <td><button onclick="delMember('${name}')">刪除</button></td></tr>
                 `
             })
             //console.log(htmlDatas);
@@ -77,6 +84,18 @@
             })
             loadDatas(filteredDatas);
         })
+
+        //刪除
+        const delMember = (name) => {
+            const idx = members.findIndex(member => member.name.toLowerCase() === name.toLowerCase());
+            if (idx !== -1) {
+                members.splice(idx, 1);
+                loadDatas(members);
+            } else {
+                alert('找不到要刪除的資料!!')
+            }
+
+        }
 
 
 
