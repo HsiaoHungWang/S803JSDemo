@@ -31,25 +31,44 @@
         let str = "JavaScript";
         //0123456789
 
-        console.log(str.length);
-        const fileName = 'dog.pdf';
-        const datas = fileName.split('.');
-        //判斷檔案的副檔名
-        //動態產生檔案名稱 + 副檔名
-        console.log(datas);
-        if (datas[1] === 'jpg') {
-            console.log('是圖檔');
-        } else {
-            console.log('不是圖檔');
-        }
+        // console.log(str.length);
+        // const fileName = 'dog.pdf';
+        // const datas = fileName.split('.');
+        // //判斷檔案的副檔名
+        // //動態產生檔案名稱 + 副檔名
+        // console.log(datas);
+        // if (datas[1] === 'jpg') {
+        //     console.log('是圖檔');
+        // } else {
+        //     console.log('不是圖檔');
+        // }
 
-        //Email格式檢查
-        if (checkMail('Tom@gmail.com')) {
-            console.log('Email格式正確')
-        } else {
+        // //Email格式檢查
+        // if (checkMail('Tom@gmail.com')) {
+        //     console.log('Email格式正確')
+        // } else {
 
-            console.log('Email格式不正確')
-        }
+        //     console.log('Email格式不正確')
+        // }
+
+        //Date物件
+        // const today = new Date();
+        // console.log(today);
+        // console.log(today.getMonth() + 1);
+        // const days = ['日', '一', '二', '三', '四', '五', '六']
+        // console.log(`星期${days[today.getDay()]}`);
+        // //hh:mm:ss
+        // console.log(today.getSeconds().toString().padStart(2, '0'));  //05
+        // console.log(today.getTime());
+
+        //輸入生日，計算幾歲
+        //一年多少毫秒 => 365.2...天 * 24小時 * 60分 * 60秒 * 1000毫秒
+        // const Birthday = new Date('2000/1/1');
+        // console.log(Birthday.getTime());
+
+        //RegExp 物件
+
+
 
     </script>
 </body>
