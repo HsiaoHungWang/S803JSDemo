@@ -12,3 +12,5 @@ const tempatureConvert = (degree, type) => {
     }
     return degreeConvert;
 }
+
+const PI = 3.1415;
