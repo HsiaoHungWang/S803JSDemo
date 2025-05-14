@@ -10,7 +10,7 @@
 <body>
 
     <script type="module">
-        import { checkMail } from './scripts/validate.js';
+        import { checkMail, chkPersonId, checkCellPhone, checkMailByRegExp, checkPassword } from './scripts/validate.js';
 
         //Global 物件的方法
         // const strUrl = 'https://www.ispan.com.tw/?search=全端&keyword=!@#$%^';
@@ -28,7 +28,7 @@
 
         //String 物件
         //let str = new String("JavaScript");
-        let str = "JavaScript";
+        //let str = "JavaScript";
         //0123456789
 
         // console.log(str.length);
@@ -67,6 +67,39 @@
         // console.log(Birthday.getTime());
 
         //RegExp 物件
+        //let re = new RegExp(pattern, 'gi');
+        // const re = /a+b/;
+        // const str = "JavaScript JAVA";
+        // //RegExp的用法一
+        // const datas = str.match(re);
+        //console.log(datas);
+        //RegExp的用法二
+        // console.log(re.test('b'));
+        // console.log(re.test('ab'));
+        // console.log(re.test('aab'));
+
+
+        // console.log(chkPersonId('a123456789')); //true
+        // console.log(chkPersonId('a323456789')); //false
+        // console.log(chkPersonId('1323456789')); //false
+        // console.log(chkPersonId('a12345678')); //false
+
+        // console.log(checkCellPhone('0912233344'));  //false
+        // console.log(checkCellPhone('0912-233-344'));  //true
+        // console.log(checkCellPhone('0912-233-3443'));  //false
+        // console.log(checkCellPhone('0912-233-34'));  //false
+        // console.log(checkCellPhone('0812-233-341'));  //false
+
+        // console.log(checkMailByRegExp('tom@gmail.com')); //true
+        // console.log(checkMailByRegExp('tommail.com')); //false
+        // console.log(checkMailByRegExp('tom@gmail.com1')); //false
+
+
+        console.log(checkPassword('Aa345678')); //true
+        console.log(checkPassword('A1345678')); //false
+        console.log(checkPassword('Aa34567')); //false
+        console.log(checkPassword('Aa34567$')); //true
+
 
 
 
