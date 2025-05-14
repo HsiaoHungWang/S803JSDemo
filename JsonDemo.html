@@ -117,6 +117,7 @@
             const idx = members.findIndex(member => member.name.toLowerCase() === name.toLowerCase());
             if (idx !== -1) {
                 members.splice(idx, 1);
+                localStorage.setItem('members', JSON.stringify(members));
                 loadDatas(members);
             } else {
                 alert('找不到要刪除的資料!!')
@@ -126,6 +127,7 @@
         //新增push
         const addMember = () => {
             members.push({ "name": inpName.value, "age": inpAge.value, "email": inpEmail.value });
+            localStorage.setItem('members', JSON.stringify(members));
             loadDatas(members);
             inpName.value = '';
             inpAge.value = '';
