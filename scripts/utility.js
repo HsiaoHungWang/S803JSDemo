@@ -14,3 +14,8 @@ const tempatureConvert = (degree, type) => {
 }
 
 const PI = 3.1415;
+
+export default tempatureConvert;
+export { celsius_to_fahrenheit, PI };
+
+

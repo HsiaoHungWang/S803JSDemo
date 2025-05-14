@@ -10,6 +10,18 @@
 <body>
 
     <script src="scripts/main.js" type="module"></script>
+    <script type="module">
+        import tempatureConvert, { celsius_to_fahrenheit, PI } from './scripts/utility.js';
+
+        console.log(celsius_to_fahrenheit(0)); //32
+        console.log(tempatureConvert(0, 'C')); //32
+        console.log(PI);
+
+        //console.log(fahrenheit_to_celsius(32)); //0
+        // console.log(tempatureConvert(32, 'F')); //0
+
+
+    </script>
 </body>
 
 </html>
