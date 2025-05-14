@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const strUrl = 'https://www.ispan.com.tw/?search=全端&keyword=!@#$%^';
+        console.log(encodeURI(strUrl));
+        console.log(encodeURIComponent(strUrl));
+
+        //isNaN => is Not a Number => 不是數值 => true，是數值 => false
+        console.log(isNaN('abcd')); //true
+        console.log(isNaN('1234')); //false
+        //判斷變數中的資料是不是數字
+        const str = '567';
+        if (!isNaN(str)) {
+            console.log(`str=${str} 是數字`);
+        }
+    </script>
+</body>
+
+</html>
