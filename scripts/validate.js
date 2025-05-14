@@ -73,7 +73,18 @@ const checkPassword = pwd => {
         isValid = false;
     }
     return isValid
-
 }
 
-export { checkEmpty, checkMail, chkPersonId, checkCellPhone, checkMailByRegExp, checkPassword };
+//信用卡號碼檢查
+//開始是3、4、5
+//之後接15個數字
+const checkCardNumber = card => {
+    let isValid = true;
+    const re = /^(3|4|5){1}\d{15}$/;
+    if (!re.test(card)) {
+        isValid = false;
+    }
+    return isValid;
+}
+
+export { checkEmpty, checkMail, chkPersonId, checkCellPhone, checkMailByRegExp, checkPassword, checkCardNumber };

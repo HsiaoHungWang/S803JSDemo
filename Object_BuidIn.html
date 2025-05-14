@@ -10,7 +10,7 @@
 <body>
 
     <script type="module">
-        import { checkMail, chkPersonId, checkCellPhone, checkMailByRegExp, checkPassword } from './scripts/validate.js';
+        import { checkMail, chkPersonId, checkCellPhone, checkMailByRegExp, checkPassword, checkCardNumber } from './scripts/validate.js';
 
         //Global 物件的方法
         // const strUrl = 'https://www.ispan.com.tw/?search=全端&keyword=!@#$%^';
@@ -95,10 +95,14 @@
         // console.log(checkMailByRegExp('tom@gmail.com1')); //false
 
 
-        console.log(checkPassword('Aa345678')); //true
-        console.log(checkPassword('A1345678')); //false
-        console.log(checkPassword('Aa34567')); //false
-        console.log(checkPassword('Aa34567$')); //true
+        // console.log(checkPassword('Aa345678')); //true
+        // console.log(checkPassword('A1345678')); //false
+        // console.log(checkPassword('Aa34567')); //false
+        // console.log(checkPassword('Aa34567$')); //true
+
+        console.log(checkCardNumber('3111111111111111')); //true
+        console.log(checkCardNumber('311111111111111')); //false
+        console.log(checkCardNumber('6111111111111111')); //false
 
 
 
