@@ -44,7 +44,12 @@
         }
 
         //Email格式檢查
-        checkMail('@Tomgmail.com@');
+        if (checkMail('Tom@gmail.com')) {
+            console.log('Email格式正確')
+        } else {
+
+            console.log('Email格式不正確')
+        }
 
     </script>
 </body>
