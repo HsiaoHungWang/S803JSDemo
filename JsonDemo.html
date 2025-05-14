@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    <input type="text" id="inputSearch">
     <table>
         <thead>
             <tr>
@@ -38,6 +39,8 @@
 
     <script>
         const tb = document.getElementById('tbody1');
+        const inpSearch = document.getElementById('inputSearch');
+
         //JSON
         const members = [
             { "name": "Jack", "age": 30, "email": "Jack@company.com" },
@@ -63,6 +66,17 @@
         }
 
         loadDatas(members);
+
+        //filter
+        inpSearch.addEventListener('input', () => {
+            //console.log(inpSearch.value);
+            const filteredDatas = members.filter(member => {
+                if (member.name.toLowerCase().includes(inpSearch.value)) {
+                    return member;
+                }
+            })
+            loadDatas(filteredDatas);
+        })
 
 
 
