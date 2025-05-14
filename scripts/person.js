@@ -1,0 +1,1 @@
+export const person = { "firstName": "Jack", "lastName": "Wu" }
