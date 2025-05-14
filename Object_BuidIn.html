@@ -9,19 +9,43 @@
 
 <body>
 
-    <script>
-        const strUrl = 'https://www.ispan.com.tw/?search=全端&keyword=!@#$%^';
-        console.log(encodeURI(strUrl));
-        console.log(encodeURIComponent(strUrl));
+    <script type="module">
+        import { checkMail } from './scripts/validate.js';
 
-        //isNaN => is Not a Number => 不是數值 => true，是數值 => false
-        console.log(isNaN('abcd')); //true
-        console.log(isNaN('1234')); //false
-        //判斷變數中的資料是不是數字
-        const str = '567';
-        if (!isNaN(str)) {
-            console.log(`str=${str} 是數字`);
+        //Global 物件的方法
+        // const strUrl = 'https://www.ispan.com.tw/?search=全端&keyword=!@#$%^';
+        // console.log(encodeURI(strUrl));
+        // console.log(encodeURIComponent(strUrl));
+
+        // //isNaN => is Not a Number => 不是數值 => true，是數值 => false
+        // console.log(isNaN('abcd')); //true
+        // console.log(isNaN('1234')); //false
+        // //判斷變數中的資料是不是數字
+        // const str = '567';
+        // if (!isNaN(str)) {
+        //     console.log(`str=${str} 是數字`);
+        // }
+
+        //String 物件
+        //let str = new String("JavaScript");
+        let str = "JavaScript";
+        //0123456789
+
+        console.log(str.length);
+        const fileName = 'dog.pdf';
+        const datas = fileName.split('.');
+        //判斷檔案的副檔名
+        //動態產生檔案名稱 + 副檔名
+        console.log(datas);
+        if (datas[1] === 'jpg') {
+            console.log('是圖檔');
+        } else {
+            console.log('不是圖檔');
         }
+
+        //Email格式檢查
+        checkMail('@Tomgmail.com@');
+
     </script>
 </body>
 
