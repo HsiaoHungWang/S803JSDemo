@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //定義類別
+        class User {
+            constructor(fn, ln) {
+                this.firstName = fn;
+                this.lastName = ln;
+            }
+            fullName() {
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+
+        //產生物件
+        const userA = new User('Fiona', 'Wang');
+        console.log(userA.fullName());
+        const userB = new User('Jack', 'Wu');
+        console.log(userB.fullName());
+
+        //繼承
+        class Employee extends User {
+            constructor(fn, ln, id, salary) {
+                super(fn, ln);
+                this.id = id;
+                this.salary = salary;
+            }
+            sayHi() {
+                return `Hello All, 我是 ${super.fullName()}，員編是：${this.id} `;
+            }
+        }
+
+        const empA = new Employee('Fiona', 'Wang', '12345', '50000');
+        console.log(empA.sayHi());
+    </script>
+</body>
+
+</html>
