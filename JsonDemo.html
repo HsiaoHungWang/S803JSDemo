@@ -8,7 +8,7 @@
     <style>
         table {
             border: 1px solid green;
-            width: 500px;
+            width: 600px;
             border-collapse: collapse;
         }
 
@@ -19,6 +19,14 @@
 
             padding: 10px;
 
+        }
+
+        #inputSearch {
+            margin: 3px;
+        }
+
+        #inputAge {
+            width: 40px;
         }
     </style>
 </head>
@@ -36,11 +44,22 @@
         </thead>
         <tbody id="tbody1">
         </tbody>
+        <tfoot>
+            <tr>
+                <td><input type="text" id="inputName" placeholder="姓名"></td>
+                <td><input type="number" id="inputAge" placeholder="年紀"></td>
+                <td><input type="text" id="inputEmail" placeholder="電子郵件"></td>
+                <td><button onclick="addMember()">新增</button></td>
+            </tr>
+        </tfoot>
     </table>
 
     <script>
         const tb = document.getElementById('tbody1');
         const inpSearch = document.getElementById('inputSearch');
+        const inpName = document.getElementById('inputName');
+        const inpAge = document.getElementById('inputAge');
+        const inpEmail = document.getElementById('inputEmail');
 
         //JSON
         const members = [
@@ -74,7 +93,7 @@
 
         loadDatas(members);
 
-        //filter
+        //搜尋filter
         inpSearch.addEventListener('input', () => {
             //console.log(inpSearch.value);
             const filteredDatas = members.filter(member => {
@@ -85,7 +104,7 @@
             loadDatas(filteredDatas);
         })
 
-        //刪除
+        //刪除splice
         const delMember = (name) => {
             const idx = members.findIndex(member => member.name.toLowerCase() === name.toLowerCase());
             if (idx !== -1) {
@@ -94,7 +113,15 @@
             } else {
                 alert('找不到要刪除的資料!!')
             }
+        }
 
+        //新增push
+        const addMember = () => {
+            members.push({ "name": inpName.value, "age": inpAge.value, "email": inpEmail.value });
+            loadDatas(members);
+            inpName.value = '';
+            inpAge.value = '';
+            inpEmail.value = '';
         }
 
 
