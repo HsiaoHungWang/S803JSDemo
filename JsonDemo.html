@@ -71,7 +71,7 @@
         inpSearch.addEventListener('input', () => {
             //console.log(inpSearch.value);
             const filteredDatas = members.filter(member => {
-                if (member.name.toLowerCase().includes(inpSearch.value)) {
+                if (member.name.toLowerCase().includes(inpSearch.value.toLowerCase())) {
                     return member;
                 }
             })
