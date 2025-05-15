@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Document Object Model</h1>
+    <ul>
+        <li>aaaaa</li>
+        <li>bbbbb</li>
+        <li id="myLi">theli</li>
+        <li>dddd</li>
+        <li>eeee</li>
+    </ul>
+
+    <script>
+        const myH = document.querySelector('h1');
+        const theLi = document.querySelector('#myLi');
+        console.log(theLi.firstChild.nodeValue); //theli
+        console.log(theLi.previousSibling); //#text \n
+        console.log(theLi.previousSibling.previousSibling.firstChild.nodeValue); //bbbbb
+        console.log(theLi.nextSibling.nextSibling.firstChild.nodeValue); //ddddd
+        console.log(theLi.parentNode);
+        console.log(theLi.parentNode.firstChild);//#text \n
+        console.log(theLi.parentNode.childNodes[1].firstChild.nodeValue);//aaaa
+        //讀出eeee的內容
+
+
+
+
+
+        // console.log(myH.nodeType); //元素節點 1
+        // console.log(myH.nodeName); //H1
+        // console.log(myH.nodeValue); //null
+
+        // console.log(myH.firstChild.nodeType); //文字節點3
+        // console.log(myH.firstChild.nodeName); //#text
+        // console.log(myH.firstChild.nodeValue); //Document Object Model
+
+    </script>
+</body>
+
+</html>

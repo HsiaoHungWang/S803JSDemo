@@ -138,7 +138,16 @@
 
         //修改
         const ModifyMember = event => {
-            console.log(event.target);
+            //  console.log(event.target);
+            const row = event.target.closest('tr');  //.parentNode.parentNode;
+            const name = row.childNodes[0].textContent;
+            const age = row.childNodes[1].firstChild.nodeValue;
+            const email = row.childNodes[2].textContent;
+
+            const idx = members.findIndex(member => member.name.toLowerCase() === name.toLowerCase());
+            members[idx] = { "name": name, "age": age, "email": email }; //{name,age,email}
+            localStorage.setItem('members', JSON.stringify(members));
+
         }
 
 
