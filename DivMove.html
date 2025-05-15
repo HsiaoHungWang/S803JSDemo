@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+
+    <script>
+        let flag;
+        let startX;
+        let startY;
+        let myDivLeft;
+        let myDivTop;
+        const myDiv = document.getElementById('div1');
+        document.addEventListener('keydown', event => {
+            switch (event.which) {
+                case 37: //往左
+                    myDiv.style.left = `${myDiv.offsetLeft - 10}px`
+                    break;
+                case 38: //往上
+                    myDiv.style.top = `${myDiv.offsetTop - 10}px`
+                    break;
+                case 39: //往右
+                    myDiv.style.left = `${myDiv.offsetLeft + 10}px`
+                    break;
+                case 40: //往下
+                    myDiv.style.top = `${myDiv.offsetTop + 10}px`
+                    break;
+            }
+        })
+        myDiv.addEventListener('mousedown', event => {
+            flag = true;
+            startX = event.clientX;
+            startY = event.clientY;
+            myDivLeft = myDiv.offsetLeft;
+            myDivTop = myDiv.offsetTop;
+        });
+        myDiv.addEventListener('mouseup', event => flag = false);
+        myDiv.addEventListener('mousemove', event => {
+            if (flag) {
+                myDiv.style.left = `${myDivLeft + (event.clientX - startX)}px`;
+                myDiv.style.top = `${myDivTop + (event.clientY - startY)}px`;
+            }
+        })
+    </script>
+</body>
+
+</html>
