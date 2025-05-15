@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #theH {
+            color: green;
+            background-color: lightpink;
+        }
+
+        #img1 {
+            width: 400px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="theH">JavaScript Event Demo</h1>
+    <img src="images/dog.webp" id="img1" />
+
+    <script>
+        const myH = document.getElementById('theH');
+        const myImg = document.getElementById('img1');
+
+        myH.addEventListener('mouseover', evt => {
+            // console.log(evt.target); //事件對象
+            evt.target.style.color = 'red';
+            evt.target.style.backgroundColor = 'lightgreen';
+        })
+        myH.addEventListener('mouseout', evt => {
+            // console.log(evt.target); //事件對象
+            evt.target.style.color = 'green';
+            evt.target.style.backgroundColor = 'lightpink';
+        })
+
+        myImg.addEventListener('mouseover', evt => {
+            console.log(evt);
+            evt.target.style.opacity = 1;
+        })
+
+        myImg.addEventListener('mouseout', evt => {
+            evt.target.style.opacity = 0.3;
+        })
+
+        myImg.addEventListener('click', evt => {
+            console.log(evt);
+            evt.target.src = 'images/cat.jpg'
+        })
+    </script>
+</body>
+
+</html>
