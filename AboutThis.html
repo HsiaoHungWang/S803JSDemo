@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- this 代表一個物件 -->
+    <!-- 事件處理程序：this 代表事件物件 -->
+    <!--'use strict' 一般函式中的 this 就是 undefined-->
+    <!--箭頭函式中的 this 是由外層作用域來決定是甚麼-->
+
+    <button id="buttonClick">Click</button>
+    <script>
+        console.log(this);  //Window
+
+        // function sayHi() {
+        //     'use strict'
+        //     console.log(this);  //沒有 use strict ，this 是 Window
+        //     // console.log(this.id);
+        // }
+
+        //箭頭函式
+        const sayHi = () => {
+            console.log(this); //Window
+        }
+
+        sayHi();
+
+        // document.getElementById('buttonClick').addEventListener('click', function () {
+        //     this.style.color = "green";
+        // });
+        document.getElementById('buttonClick').addEventListener('click', event => {
+            event.target.style.backgroundColor = "yellow";
+        });
+    </script>
+</body>
+
+</html>
