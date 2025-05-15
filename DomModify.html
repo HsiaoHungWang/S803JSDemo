@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="buttonAdd">Add</button>
+    <ul id="ul1">
+        <li>aaaa</li>
+        <li class="s1">bbbb</li>
+        <li>cccc</li>
+    </ul>
+
+    <ul>
+        <li>xxxx</li>
+        <li class="s1">yyyy</li>
+        <li>zzzz</li>
+    </ul>
+    <ul id="ul2">
+
+    </ul>
+    <div id="div1"></div>
+
+    <script>
+        // const lis1 = document.getElementsByTagName('li');
+        // const lis2 = document.getElementsByClassName('s1');
+
+        const btnAdd = document.querySelector('#buttonAdd');
+        const theUl = document.querySelector('#ul1');
+        const myDiv = document.querySelector('#div1');
+
+        const delLi = document.querySelector('#ul1>.s1');
+        //刪除
+        delLi.parentNode.removeChild(delLi);
+
+        //新增
+        btnAdd.addEventListener('click', event => {
+            //<li>dddd</li>
+            //建立文字節點 dddd
+            const txtLi = document.createTextNode('dddd');
+            //建立元素節點 li
+            const eleLi = document.createElement('li');
+            //文件節點跟元素節點建立關係 li.appendChild(ddd)
+            eleLi.appendChild(txtLi);
+            //把新增的li元素加到網頁上
+            theUl.appendChild(eleLi);
+
+            //<img src="..." />
+            const eleImg = document.createElement('img');
+            eleImg.setAttribute('src', '/images/cat.jpg');
+            myDiv.appendChild(eleImg);
+        })
+
+        // const lis1 = document.querySelectorAll('li');
+        // const lis2 = document.querySelectorAll('.s1');
+        // const li = document.querySelector('.s1');
+        // console.log(li);
+        // console.log(lis1);
+        // console.log(lis2);
+        // for (let i = 0, max = lis1.length; i < max; i++) {
+        //     // console.log(lis1[i].firstChild.nodeValue);
+        //     console.log(lis1[i].textContent);
+        // }
+
+        const datas = ["basketball", "valleyball", "football", "baseball"];
+        const theUl2 = document.querySelector('#ul2');
+        const docFrag = document.createDocumentFragment();
+        datas.forEach(ball => {
+            //不要在回圈中去搜尋網頁上的標籤
+            //<li>ball</li>
+            const txtLi = document.createTextNode(ball);
+            const eleLi = document.createElement('li');
+            eleLi.appendChild(txtLi);
+
+            //不要將內容在迴圈中更新到網頁上
+            docFrag.appendChild(eleLi);
+
+        })
+        theUl2.appendChild(docFrag);
+
+    </script>
+</body>
+
+</html>
