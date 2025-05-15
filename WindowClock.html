@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button1">開始</button>
+    <h2 id="clock"></h2>
+
+    <script>
+        const btn = document.getElementById('button1');
+        const hClock = document.getElementById('clock');
+        let t;
+        btn.addEventListener('click', event => {
+            if (btn.textContent === '開始') {
+                btn.textContent = '停止'
+                t = window.setInterval(startClock, 1000);
+            } else {
+                btn.textContent = '開始'
+                window.clearInterval(t);
+
+            }
+        })
+        const startClock = () => {
+            const today = new Date();
+            hClock.textContent = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+        }
+    </script>
+</body>
+
+</html>
