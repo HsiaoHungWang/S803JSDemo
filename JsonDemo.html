@@ -91,8 +91,10 @@
             const htmlDatas = datas.map(member => {
                 const { name, age, email } = member; // { "name": "Jack", "age": 30, "email": "Jack@company.com" }
                 return `
-                   <tr><td>${name}</td><td>${age}</td><td>${email}</td>
-                       <td><button onclick="delMember('${name}')">刪除</button></td></tr>
+                   <tr><td>${name}</td><td contenteditable="true">${age}</td><td contenteditable="true">${email}</td>
+                       <td><button onclick="delMember('${name}')">刪除</button>
+                        <button onclick="ModifyMember(event)">修改</button>
+                        </td></tr>
                 `
             })
             //console.log(htmlDatas);
@@ -132,6 +134,11 @@
             inpName.value = '';
             inpAge.value = '';
             inpEmail.value = '';
+        }
+
+        //修改
+        const ModifyMember = event => {
+            console.log(event.target);
         }
 
 
