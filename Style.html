@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1 {
+            color: green;
+        }
+
+        .s2 {
+            background-color: lightgreen;
+            width: 400px;
+            text-align: center;
+            padding: 3px;
+        }
+
+        .s3 {
+            text-decoration: underline;
+            background-color: chocolate;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="buttonToggle">Toggle</button>
+    <button id="buttonAdd">+</button>
+    <button id="buttonMinus">-</button>
+
+    <h1 id="myH" class="s1 s2" style="font-size:36px;">動態樣式</h1>
+    <script>
+        const theH = document.getElementById('myH');
+        theH.addEventListener('mouseover', event => {
+            theH.classList.add('s3');
+
+        })
+        theH.addEventListener('mouseout', event => {
+            theH.classList.remove('s3');
+        })
+        document.getElementById('buttonToggle').addEventListener('click', event => {
+            theH.classList.toggle('s3');
+        })
+        document.getElementById('buttonAdd').addEventListener('click', event => {
+            const size = parseInt(theH.style.fontSize);
+            theH.style.fontSize = `${size + 2}px`;
+        })
+        document.getElementById('buttonMinus').addEventListener('click', event => {
+            const size = parseInt(theH.style.fontSize);
+            theH.style.fontSize = `${size - 2}px`;
+        })
+    </script>
+</body>
+
+</html>

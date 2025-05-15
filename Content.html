@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="myH">JavaScript</h2>
+
+    <script>
+        const theH = document.getElementById('myH');
+        // theH.textContent = "abcd";
+        // theH.outerHTML = "<h3>abcd</h3>";
+
+        theH.insertAdjacentText('afterbegin', 'afterbegin');
+        theH.insertAdjacentText('beforeend', 'beforeend');
+        theH.insertAdjacentHTML('beforebegin', '<u>beforebegin</u>');
+        theH.insertAdjacentHTML('afterend', '<u>afterend</u>');
+    </script>
+</body>
+
+</html>
