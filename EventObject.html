@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 300px;
+            border: 1px solid green;
+            position: absolute;
+            top: 100px;
+            left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text1" />
+    <a href="https://www.ispan.com.tw" id="a1">iSpan</a>
+    <div id="div1"></div>
+    <form action="server" id="registerForm">
+        <input type="text" name="userName" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        //步驟一找到要控制的對象
+        const myTxt = document.getElementById('text1');
+        const myDiv = document.getElementById('div1');
+        const myA = document.getElementById('a1');
+        const myForm = document.getElementById('registerForm');
+
+        //步驟二 甚麼時候 Event
+        myDiv.addEventListener('mousedown', event => {
+            //滑鼠mousedown事件
+            //button: 左鍵:0、滾輪:1、右鍵:2
+            console.log(event);
+            console.log(`button:${event.button}`);
+
+        })
+        myTxt.addEventListener('keydown', b => {
+            //鍵盤keydown事件
+            //要知道使用者是按下哪個案鍵：key、which、altKey、shiftKey、ctrlKey
+            //key:Enter > which:13
+            console.log(b);
+            console.log(b.key);
+
+            //a > 65  z > 90
+            //0-9 48-57
+        })
+        //步驟三 做甚麼事
+        //步驟四 顯示結果
+
+        myA.addEventListener('click', event => {
+            if (!window.confirm('真的要去嗎?')) {
+                //停止預設行為
+                event.preventDefault();
+            }
+
+        })
+
+        myForm.addEventListener('submit', event => {
+            //停止預設行為
+            event.preventDefault();
+            //驗證程式
+            if (window.confirm('資料都輸入了嗎?')) {
+                myForm.submit();
+            }
+        })
+
+        document.addEventListener('contextmenu', event => {
+            //停止預設行為
+            event.preventDefault();
+        })
+    </script>
+</body>
+
+</html>
