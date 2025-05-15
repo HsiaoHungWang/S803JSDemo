@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* selectors{
+
+        } */
+
+
+        div {
+            margin: 3px;
+        }
+
+        /* input[name="name"] {
+            background-color: silver;
+        } */
+
+        .error {
+            background-color: pink;
+            border: 1px dashed red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="registerForm" action="server" novalidate>
+        <div>
+            <input type="text" placeholder="姓名" name="name" required />
+        </div>
+        <div>
+            <input type="email" placeholder="電子郵件" name="email" required />
+        </div>
+        <div>
+            <input type="tel" placeholder="0911-222-333" name="phone" pattern="09\d{2}-\d{3}-\d{3}" required />
+        </div>
+        <div>
+            <button>註冊</button>
+            <!-- <input type="submit" value="註冊" /> -->
+        </div>
+
+    </form>
+    <hr />
+    <ul id="ulError">
+
+    </ul>
+
+    <script type="module">
+        import { checkEmpty } from './scripts/validate.js';
+        const regForm = document.getElementById('registerForm');
+
+
+        //querySelector('css selectors')
+        const inpName = document.querySelector('input[name="name"]')
+        const inpEmail = document.querySelector('input[name="email"]')
+        const inpPhone = document.querySelector('input[name="phone"]')
+        const ulErr = document.querySelector('#ulError')
+
+        regForm.addEventListener('submit', event => {
+            event.preventDefault();
+            //寫自己的驗證程式
+            inpName.classList.remove('error');
+            inpEmail.classList.remove('error');
+            inpPhone.classList.remove('error');
+            const errors = [];
+
+            //檢查是否是空值
+            if (!checkEmpty(inpName.value)) {
+                errors.push('姓名一定要輸入')
+                inpName.classList.add('error');
+            }
+            if (!checkEmpty(inpEmail.value)) {
+                errors.push('電子郵件一定要輸入')
+                inpEmail.classList.add('error');
+            }
+            if (!checkEmpty(inpPhone.value)) {
+                errors.push('手機號碼一定要輸入');
+                inpPhone.classList.add('error');
+            }
+
+            if (errors.length === 0) {
+                regForm.submit()
+            } else {
+                //顯示錯誤訊息
+                const liErrors = errors.map(err => `<li>${err}</li>`)
+                ulErr.innerHTML = liErrors.join('');
+            }
+
+
+
+        })
+    </script>
+</body>
+
+</html>
